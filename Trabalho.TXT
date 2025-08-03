@@ -1,0 +1,238 @@
+  ;Iagê von Linsingen - 00590289
+  
+  ;INICIALIZAÇÃO DAS VARIÁVEIS
+  0   32 132   LDA 132
+  2   16 130   STA 130
+  4   32 132   LDA 132
+  6   16 131   STA 131
+  8   32 133   LDA 133
+ 10   16 145   STA 145
+  ;CÁLCULO DE a XOR b
+  ;Cálculo de NOT a
+ 12   32 128   LDA 128
+ 14   96       NOT
+ 15   16 150   STA 150
+ ;Cálculo de (NOT a AND b)
+ 17   32 150   LDA 150
+ 19   80 129   AND 129
+ 21   16 151   STA 151
+ ;Cálculo de NOT b
+ 23   32 129   LDA 129
+ 25   96       NOT
+ 26   16 152   STA 152
+ ;Cálculo de (a AND NOT b)
+ 28   32 128   LDA 128
+ 30   80 152   AND 152
+ 32   16 153   STA 153
+ ;Cálculo de {(NOT a AND b) OR (a AND NOT b)}
+ 34   32 151   LDA 151
+ 36   64 153   OR  153
+ 38   16 130   STA 130
+ 
+ ;CALCULO DA DISTANCIA DE HAMMING
+ 40   32 130   LDA 130
+ 42   80 145   AND 145 ;Realiza a operação AND de a XOR b com a máscara, inicializada em 1.
+ 44  160  52   JZ  52  ;Se for zero, pula para adiante do programa, sem acrescentar o valor a distância de Hamming.
+ ;Aumento da distância de Hamming em um.
+ 46   32 131   LDA 131 
+ 48   48 133   ADD 133
+ 50   16 131   STA 131
+ ;Checa se a máscara já é 128, para encerrar o programa.
+ 52   32 140   LDA 140
+ 54   96       NOT
+ 55   48 133   ADD 133
+ 57   48 145   ADD 145
+ 59   16 200   STA 200
+ 61   32 200   LDA 200
+ 63  160  73   JZ  73 ;pula para o HLT.
+ ;Aumenta a máscara e vai pro próximo bit.
+ 65   32 145   LDA 145
+ 67   48 145   ADD 145
+ 69   16 145   STA 145
+ 71  128  40   JMP 40
+ 73  240       HLT
+ 74    0       NOP
+ 75    0       NOP
+ 76    0       NOP
+ 77    0       NOP
+ 78    0       NOP
+ 79    0       NOP
+ 80    0       NOP
+ 81    0       NOP
+ 82    0       NOP
+ 83    0       NOP
+ 84    0       NOP
+ 85    0       NOP
+ 86    0       NOP
+ 87    0       NOP
+ 88    0       NOP
+ 89    0       NOP
+ 90    0       NOP
+ 91    0       NOP
+ 92    0       NOP
+ 93    0       NOP
+ 94    0       NOP
+ 95    0       NOP
+ 96    0       NOP
+ 97    0       NOP
+ 98    0       NOP
+ 99    0       NOP
+100    0       NOP
+101    0       NOP
+102    0       NOP
+103    0       NOP
+104    0       NOP
+105    0       NOP
+106    0       NOP
+107    0       NOP
+108    0       NOP
+109    0       NOP
+110    0       NOP
+111    0       NOP
+112    0       NOP
+113    0       NOP
+114    0       NOP
+115    0       NOP
+116    0       NOP
+117    0       NOP
+118    0       NOP
+119    0       NOP
+120    0       NOP
+121    0       NOP
+122    0       NOP
+123    0       NOP
+124    0       NOP
+125    0       NOP
+126    0       NOP
+127    0       NOP
+
+128    0   ;entrada 1
+129    0   ;entrada 2
+130    0   ;saida a XOR b
+131    0   ;saida distancia de Hamming
+;constantes
+132    0      
+133    1      
+134    2      
+135    4      
+136    8      
+137   16      
+138   32      
+139   64      
+140  128      
+
+141    0      
+142    0      
+143    0      
+144    0      
+145    0    ;máscara AND  
+146    0      
+147    0      
+148    0      
+149    0      
+150    0    ;NOT a
+151    0    ;NOT a AND b
+152    0    ;NOT b
+153    0    ;a AND NOT b
+154    0      
+155    0      
+156    0      
+157    0      
+158    0      
+159    0      
+160    0      
+161    0      
+162    0      
+163    0      
+164    0      
+165    0      
+166    0      
+167    0      
+168    0      
+169    0      
+170    0      
+171    0      
+172    0      
+173    0      
+174    0      
+175    0      
+176    0      
+177    0      
+178    0      
+179    0      
+180    0      
+181    0      
+182    0      
+183    0      
+184    0      
+185    0      
+186    0      
+187    0      
+188    0      
+189    0      
+190    0      
+191    0      
+192    0      
+193    0      
+194    0      
+195    0      
+196    0      
+197    0      
+198    0      
+199    0      
+200    0      
+201    0      
+202    0      
+203    0      
+204    0      
+205    0      
+206    0      
+207    0      
+208    0      
+209    0      
+210    0      
+211    0      
+212    0      
+213    0      
+214    0      
+215    0      
+216    0      
+217    0      
+218    0      
+219    0      
+220    0      
+221    0      
+222    0      
+223    0      
+224    0      
+225    0      
+226    0      
+227    0      
+228    0      
+229    0      
+230    0      
+231    0      
+232    0      
+233    0      
+234    0      
+235    0      
+236    0      
+237    0      
+238    0      
+239    0      
+240    0      
+241    0      
+242    0      
+243    0      
+244    0      
+245    0      
+246    0      
+247    0      
+248    0      
+249    0      
+250    0      
+251    0      
+252    0      
+253    0      
+254    0      
+255    0      
